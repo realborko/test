@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website with Upper Bar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Upper bar styling */
+    #upperBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background-color: #333;
+      overflow: hidden;
+      color: white;
+      z-index: 1000;
+      transition: height 0.3s ease;
+    }
+
+    #upperBarContent {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Menu button styling */
+    .menu-btn {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    /* Main content styling */
+    .content {
+      margin: 60px 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Menu button -->
+  <button class="menu-btn" onclick="toggleBar()">☰ Menu</button>
+
+  <!-- Upper bar -->
+  <div id="upperBar">
+    <div id="upperBarContent">
+      <span>Welcome to My Website</span>
+      <a href="#" style="color: white; text-decoration: none;">Close</a>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="content">
+    <h1>Welcome!</h1>
+    <p>This is a simple webpage with an upper bar menu.</p>
+  </div>
+
+  <script>
+    const upperBar = document.getElementById('upperBar');
+
+    function toggleBar() {
+      if (upperBar.style.height === '0px' || upperBar.style.height === '') {
+        upperBar.style.height = '100px'; // Adjust height as needed
+      } else {
+        upperBar.style.height = '0';
+      }
+    }
+  </script>
+</body>
+</html>
